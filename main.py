@@ -2,9 +2,13 @@ import time
 import keyboard
 import pyautogui
 
-windowtitle="Roblox"
+'''
+python macro reliant on window focus
+'''
+
+windowtitle="PROCESSOR NAME"
 def action_2(e):
-    delay = 0.44  # Set your desired delay for action 2
+    delay = 0.44 
 
     def is_correct_window():
         import win32gui
@@ -15,25 +19,24 @@ def action_2(e):
         if is_correct_window():
             print("Autoclick Enabled")
             while True:
-                time.sleep(delay)  # Wait for the specified delay
+                time.sleep(delay)  
                 pyautogui.click(button='left')
 
-                # Check if the exit key is pressed
-                if keyboard.is_pressed('3'):  # Replace 'esc' with your desired exit key
+
+                if keyboard.is_pressed('3'): 
                     print("Autoclick Disabled")
                     break
 
-                # Check if Roblox window loses focus (new window selected)
                 if not is_correct_window():
                     print("Autoclick Disabled")
-                    break  # Exit the loop if not Roblox window
+                    break 
 
 
 
 
 keyboard.on_press_key('2', action_2)
-# Check for exit key in the main loop
+
 while True:
-    if keyboard.is_pressed('3'):  # Replace 'esc' with your desired exit key
+    if keyboard.is_pressed('3'):  
         break
     keyboard.wait()  # Wait for any key press
