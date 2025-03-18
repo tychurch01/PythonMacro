@@ -1,12 +1,13 @@
 import time
 import keyboard
 import pyautogui
+import pydirectinput
 
 '''
 python macro reliant on window focus
 '''
 
-windowtitle="PROCESSOR NAME"
+windowtitle="windowname"
 def action_2(e):
     delay = 0.44 
 
@@ -21,6 +22,7 @@ def action_2(e):
             while True:
                 time.sleep(delay)  
                 pyautogui.click(button='left')
+                pydirectinput.press('e')
 
 
                 if keyboard.is_pressed('3'): 
